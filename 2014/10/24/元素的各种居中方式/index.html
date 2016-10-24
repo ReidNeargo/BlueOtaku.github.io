@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>元素的各种居中方式 | 有志者 事竟成  苦心人 天不负</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="有志者 事竟成  苦心人 天不负">
+	<img src="/favicon.png" alt="有志者 事竟成  苦心人 天不负"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="http://weibo.com/yumemor/" target="_blank">Weibo</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      元素的各种居中方式
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h3 id="任意元素的多种居中方式汇总"><a href="#任意元素的多种居中方式汇总" class="headerlink" title="任意元素的多种居中方式汇总"></a>任意元素的多种居中方式汇总</h3><ol>
+<li><p>使用<code>display: flex</code>（父元素）和<code>margin: auto</code>（自身）</p>
+<blockquote>
+<p>简单、粗暴</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    display: flex;  </div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">    width: 140px;</div><div class="line">    height: 210px;</div><div class="line">    background-color: bluesky;</div><div class="line">    margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre></blockquote>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p>根据定位和C3属性来使元素居中</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    position: relative;  </div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">    width: 140px;</div><div class="line">    height: 210px;</div><div class="line">    background-color: bluesky;</div><div class="line">    position: absolute;</div><div class="line">    left: 50%;</div><div class="line">    top: 50%;</div><div class="line">    transform: translate(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>vertical-align</code>进行居中对齐</p>
+<blockquote>
+<p>利用中线重合，实现了图片的居中对齐</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    display: flex;  </div><div class="line">&#125;</div><div class="line">.box img&#123;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div><div class="line">.box::after&#123;</div><div class="line">    content: &apos;&apos;;</div><div class="line">    display: inline-block;</div><div class="line">    height: 100%;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>利用<code>table</code>实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.table &#123;</div><div class="line">        width: 600px;</div><div class="line">        height: 400px;</div><div class="line">        margin: 100px auto;</div><div class="line">        border: 1px solid #CCC;</div><div class="line">        background-color: pink;</div><div class="line">        display: table;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    .td &#123;</div><div class="line">        text-align: center;</div><div class="line">        display: table-cell;</div><div class="line">        vertical-align: middle;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;table&quot;&gt;</div><div class="line">    &lt;div class=&quot;td&quot;&gt;</div><div class="line">        &lt;img src=&quot;rocket.png&quot; alt=&quot;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释"><a href="#暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释" class="headerlink" title="暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释"></a>暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释</h3></li>
+</ol>
+</li>
+</ol>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2014-10-24T12:14:51.000Z" itemprop="datePublished">2014-10-24</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="元素的各种居中方式" data-title="元素的各种居中方式" data-url="http://yoursite.com/2014/10/24/元素的各种居中方式/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg' alt='Blue Otaku'>
+					<div class="media__body">
+						<h4>有志者 事竟成  苦心人 天不负</h4>
+						<p class='site-description'>null</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/yumemor/" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/yumemor" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/yumemor" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
