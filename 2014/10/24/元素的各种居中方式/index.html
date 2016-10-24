@@ -47,7 +47,7 @@
 			
 				
 				<li class="current-menu-item">
-					<a href="http://weibo.com/yumemor/" target="_blank">Weibo</a>
+					<a href="http://weibo.com/" target="_blank">Weibo</a>
 				</li>
 			
 		</ul>
@@ -79,33 +79,30 @@
   
 
 	<div class='post-body mb'>
-		<h3 id="任意元素的多种居中方式汇总"><a href="#任意元素的多种居中方式汇总" class="headerlink" title="任意元素的多种居中方式汇总"></a>任意元素的多种居中方式汇总</h3><ol>
-<li><p>使用<code>display: flex</code>（父元素）和<code>margin: auto</code>（自身）</p>
+		<h3 id="任意元素的多种居中方式汇总"><a href="#任意元素的多种居中方式汇总" class="headerlink" title="任意元素的多种居中方式汇总"></a>任意元素的多种居中方式汇总</h3><p>####1. 使用<code>display: flex</code>（父元素）和<code>margin: auto</code>（自身）</p>
 <blockquote>
-<p>简单、粗暴</p>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    display: flex;  </div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">    width: 140px;</div><div class="line">    height: 210px;</div><div class="line">    background-color: bluesky;</div><div class="line">    margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</code></pre></blockquote>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</code></pre><ol>
-<li><p>根据定位和C3属性来使元素居中</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    position: relative;  </div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">    width: 140px;</div><div class="line">    height: 210px;</div><div class="line">    background-color: bluesky;</div><div class="line">    position: absolute;</div><div class="line">    left: 50%;</div><div class="line">    top: 50%;</div><div class="line">    transform: translate(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用<code>vertical-align</code>进行居中对齐</p>
-<blockquote>
-<p>利用中线重合，实现了图片的居中对齐</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    display: flex;  </div><div class="line">&#125;</div><div class="line">.box img&#123;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div><div class="line">.box::after&#123;</div><div class="line">    content: &apos;&apos;;</div><div class="line">    display: inline-block;</div><div class="line">    height: 100%;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>简单、粗暴<br>   <strong>CSS样式</strong><br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    display: flex;  </div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">    width: 140px;</div><div class="line">    height: 210px;</div><div class="line">    background-color: bluesky;</div><div class="line">    margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>利用<code>table</code>实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.table &#123;</div><div class="line">        width: 600px;</div><div class="line">        height: 400px;</div><div class="line">        margin: 100px auto;</div><div class="line">        border: 1px solid #CCC;</div><div class="line">        background-color: pink;</div><div class="line">        display: table;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    .td &#123;</div><div class="line">        text-align: center;</div><div class="line">        display: table-cell;</div><div class="line">        vertical-align: middle;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;table&quot;&gt;</div><div class="line">    &lt;div class=&quot;td&quot;&gt;</div><div class="line">        &lt;img src=&quot;rocket.png&quot; alt=&quot;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h3 id="暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释"><a href="#暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释" class="headerlink" title="暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释"></a>暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释</h3></li>
-</ol>
-</li>
-</ol>
+<pre><code>**HTML结构**
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</code></pre><h4 id="2-根据定位和C3属性来使元素居中"><a href="#2-根据定位和C3属性来使元素居中" class="headerlink" title="2. 根据定位和C3属性来使元素居中"></a>2. 根据定位和C3属性来使元素居中</h4><pre><code>**CSS样式**
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    position: relative;  </div><div class="line">&#125;</div><div class="line">.inner&#123;</div><div class="line">    width: 140px;</div><div class="line">    height: 210px;</div><div class="line">    background-color: bluesky;</div><div class="line">    position: absolute;</div><div class="line">    left: 50%;</div><div class="line">    top: 50%;</div><div class="line">    transform: translate(-50%, -50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
+**HTML结构**
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</code></pre><h4 id="3-使用vertical-align进行居中对齐"><a href="#3-使用vertical-align进行居中对齐" class="headerlink" title="3. 使用vertical-align进行居中对齐"></a>3. 使用<code>vertical-align</code>进行居中对齐</h4><blockquote>
+<p>利用中线重合，实现了图片的居中对齐<br>    <strong>CSS样式</strong><br>         <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 600px;</div><div class="line">    height: 400px;</div><div class="line">    margin: 100px auto;</div><div class="line">    border: 1px solid #CCC;</div><div class="line">    display: flex;  </div><div class="line">&#125;</div><div class="line">.box img&#123;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div><div class="line">.box::after&#123;</div><div class="line">    content: &apos;&apos;;</div><div class="line">    display: inline-block;</div><div class="line">    height: 100%;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>**HTML结构**
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;</div><div class="line">    &lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</code></pre><h4 id="4-利用table实现"><a href="#4-利用table实现" class="headerlink" title="4. 利用table实现"></a>4. 利用<code>table</code>实现</h4><pre><code>**CSS样式**
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.table &#123;</div><div class="line">        width: 600px;</div><div class="line">        height: 400px;</div><div class="line">        margin: 100px auto;</div><div class="line">        border: 1px solid #CCC;</div><div class="line">        background-color: pink;</div><div class="line">        display: table;</div><div class="line">    &#125;</div><div class="line">    .td &#123;</div><div class="line">        text-align: center;</div><div class="line">        display: table-cell;</div><div class="line">        vertical-align: middle;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+
+**HTML结构**
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;table&quot;&gt;</div><div class="line">    &lt;div class=&quot;td&quot;&gt;</div><div class="line">        &lt;img src=&quot;rocket.png&quot; alt=&quot;&quot;&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+
+### 暂时就这四种吧，还有一种超级神奇的多个元素均匀分布对齐的技巧会另外开单独的一篇来解释
+</code></pre>
 	</div>
 	<div class="meta split">
 		<time class="post-date" datetime="2014-10-24T12:14:51.000Z" itemprop="datePublished">2014-10-24</time>
@@ -163,7 +160,7 @@ var duoshuoQuery = {short_name:"yumemor"};
 						
 							
 							<li>
-				        		<a href="http://weibo.com/yumemor/" target="_blank">
+				        		<a href="undefined" target="_blank">
 				        			
 				        				<i class="iconfont icon-weibo"></i>
 				        			
@@ -172,7 +169,7 @@ var duoshuoQuery = {short_name:"yumemor"};
 						
 							
 							<li>
-				        		<a href="https://github.com/yumemor" target="_blank">
+				        		<a href="undefined" target="_blank">
 				        			
 				        				<i class="iconfont icon-github"></i>
 				        			
@@ -181,7 +178,7 @@ var duoshuoQuery = {short_name:"yumemor"};
 						
 							
 							<li>
-				        		<a href="https://www.zhihu.com/people/yumemor" target="_blank">
+				        		<a href="undefined" target="_blank">
 				        			
 										<i class="iconfont icon-zhihu"></i>
 				        			
