@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>第一篇博客 | 有志者 事竟成  苦心人 天不负</title>
+    <title>JavaScript基础 | 有志者 事竟成  苦心人 天不负</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -74,72 +74,34 @@
 	
   
     <h1 class="post-title" itemprop="name">
-      第一篇博客
+      JavaScript基础
     </h1>
   
 
 	<div class='post-body mb'>
-		<blockquote>
-<p>首先个人认为，想要学好一门学问就要学会做笔记。想了好久在个人博客上第一篇应该说些什么，是要说关于前端的由来，又或者直接进入主题开始说一些基础知识。后来突然想到好多人有劲头学习，笔记却做得一团糟，找东西时犹如无头苍蝇一般。</p>
+		<h3 id="JavaScript概述"><a href="#JavaScript概述" class="headerlink" title="JavaScript概述"></a>JavaScript概述</h3><blockquote>
+<p>JavaScript是面向Web的编程语言。绝大多数网站都使用了JavaScript,并且所有的Web浏览器都包含了JavaScript解析器。这使得JavaScript能够称得上史上使用最广泛的编程语言。</p>
 </blockquote>
-<h3 id="如何做好自己的笔记"><a href="#如何做好自己的笔记" class="headerlink" title="如何做好自己的笔记"></a>如何做好自己的笔记</h3><p>这里我向大家推荐Markdown，可以让你在记事本上快速记录出漂亮又条理清晰的笔记。<br>Markdown是一种轻量级标记语言</p>
-<h4 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a>Markdown基本语法</h4><ol>
-<li><p>标题</p>
-<ol>
-<li>标题使用<code>#</code>来书写，<code>#</code>之后跟标题内容</li>
-<li>一共有六级标题，级数与<code>#</code>个数相对应</li>
-</ol>
-</li>
-<li><p>文本特殊格式</p>
-<ol>
-<li>粗体：<strong>我是加粗的字体</strong></li>
-<li>斜体：<em>我是倾斜的字体</em></li>
-<li>代码引用：<code>function</code>使用反引号</li>
-<li>多行引用：多行引用其实就是HTML中的<code>pre</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var foo = &quot;hello world&quot;;</div><div class="line">console.log(foo);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>列表</p>
-<ul>
-<li>无序列表<ul>
-<li>子列表<ul>
-<li>依此类推（回车键+Tab）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>有序列表<ol>
-<li>子列表<ol>
-<li>依此类推（与前面阿拉伯数字大小无关）</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>链接和图片</p>
-<ol>
-<li><a href="http://www.baidu.com/" target="_blank" rel="external">百度一下</a><br>[链接的文本](链接的地址)</li>
-<li><img src="http://a.hiphotos.baidu.com/zhidao/pic/item/9c16fdfaaf51f3de842cd71c92eef01f3a29792f.jpg" alt="图片"><br>[图片标题文本](图片的地址)</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p>这里只是一些简单的语法格式，但是做日常学习笔记已经绰绰有余。或许刚开始使用会有些不习惯，但使用一段时间后你会发现Markdown会是你日常学习工作中不可或缺的一部分   </p>
+<p>JavaScript也是前端开发工程师必须掌握的三种技能之一：描述网页内容的HTML、描述网页样式的CSS以及描述网页行为的JavaScript。</p>
+<h3 id="JavaScript语言核心"><a href="#JavaScript语言核心" class="headerlink" title="JavaScript语言核心"></a>JavaScript语言核心</h3><h4 id="区分大小写"><a href="#区分大小写" class="headerlink" title="区分大小写"></a>区分大小写</h4><p>JavaScript是区分大小写的语言。关键字、变量、函数名和所有的标识符都必须采取一致的大小写形式。</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>JavaScript支持两种格式的注释。在行尾<code>//</code>之后的文本都会被当做注释掉的。另外，<code>/*</code>和<code>*/</code>之间的文本也会被当做注释</p>
+<h4 id="空格、换行符"><a href="#空格、换行符" class="headerlink" title="空格、换行符"></a>空格、换行符</h4><p>由于可以在代码中随意使用空格和换行符，因此可以采用整齐、一致的缩进来形成统一的编码风格，从而提高代码的可读性。</p>
+<h4 id="直接量"><a href="#直接量" class="headerlink" title="直接量"></a>直接量</h4><blockquote>
+<p>直接量就是可以在程序中直接使用的数据值</p>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1     //数字</div><div class="line">1.1   //小数</div><div class="line">&quot;hello world&quot;    //字符串文本</div><div class="line">true          // 布尔值</div></pre></td></tr></table></figure>
+<h4 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h4><p>一般在我们进行编程时，有些地方的分号是可加可不加的。但是如果在一个项目中进行开发，难免会在开发完成后进行代码的压缩工作。这个时候那些可加可不加的分号就尤为重要了，如果不加的话会影响浏览器的解析甚至直接报错。<br><strong>所以在开发过程中尽量不要省略分号，以免造成不必要的错误</strong></p>
 
 	</div>
 	<div class="meta split">
-		<time class="post-date" datetime="2015-06-13T22:00:00.000Z" itemprop="datePublished">2015-06-14</time>
+		<time class="post-date" datetime="2015-06-20T06:05:30.000Z" itemprop="datePublished">2015-06-20</time>
 	</div>
 </article>
 
 <!--评论-->
 
 	
-<div class="ds-thread" data-thread-key="第一篇博客" data-title="第一篇博客" data-url="http://yoursite.com/2015/06/14/第一篇博客/"></div>
+<div class="ds-thread" data-thread-key="JavaScript基础" data-title="JavaScript基础" data-url="http://yoursite.com/2015/06/20/JavaScript基础/"></div>
 <script type="text/javascript">
 
 var duoshuoQuery = {short_name:"yumemor"};

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>第一篇博客 | 有志者 事竟成  苦心人 天不负</title>
+    <title>关于Ajax请求的五步 | 有志者 事竟成  苦心人 天不负</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -74,72 +74,23 @@
 	
   
     <h1 class="post-title" itemprop="name">
-      第一篇博客
+      关于Ajax请求的五步
     </h1>
   
 
 	<div class='post-body mb'>
-		<blockquote>
-<p>首先个人认为，想要学好一门学问就要学会做笔记。想了好久在个人博客上第一篇应该说些什么，是要说关于前端的由来，又或者直接进入主题开始说一些基础知识。后来突然想到好多人有劲头学习，笔记却做得一团糟，找东西时犹如无头苍蝇一般。</p>
-</blockquote>
-<h3 id="如何做好自己的笔记"><a href="#如何做好自己的笔记" class="headerlink" title="如何做好自己的笔记"></a>如何做好自己的笔记</h3><p>这里我向大家推荐Markdown，可以让你在记事本上快速记录出漂亮又条理清晰的笔记。<br>Markdown是一种轻量级标记语言</p>
-<h4 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a>Markdown基本语法</h4><ol>
-<li><p>标题</p>
-<ol>
-<li>标题使用<code>#</code>来书写，<code>#</code>之后跟标题内容</li>
-<li>一共有六级标题，级数与<code>#</code>个数相对应</li>
-</ol>
-</li>
-<li><p>文本特殊格式</p>
-<ol>
-<li>粗体：<strong>我是加粗的字体</strong></li>
-<li>斜体：<em>我是倾斜的字体</em></li>
-<li>代码引用：<code>function</code>使用反引号</li>
-<li>多行引用：多行引用其实就是HTML中的<code>pre</code> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var foo = &quot;hello world&quot;;</div><div class="line">console.log(foo);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>列表</p>
-<ul>
-<li>无序列表<ul>
-<li>子列表<ul>
-<li>依此类推（回车键+Tab）</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li>有序列表<ol>
-<li>子列表<ol>
-<li>依此类推（与前面阿拉伯数字大小无关）</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>链接和图片</p>
-<ol>
-<li><a href="http://www.baidu.com/" target="_blank" rel="external">百度一下</a><br>[链接的文本](链接的地址)</li>
-<li><img src="http://a.hiphotos.baidu.com/zhidao/pic/item/9c16fdfaaf51f3de842cd71c92eef01f3a29792f.jpg" alt="图片"><br>[图片标题文本](图片的地址)</li>
-</ol>
-</li>
-</ol>
-<blockquote>
-<p>这里只是一些简单的语法格式，但是做日常学习笔记已经绰绰有余。或许刚开始使用会有些不习惯，但使用一段时间后你会发现Markdown会是你日常学习工作中不可或缺的一部分   </p>
-</blockquote>
-
+		<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">//第一步：创建请求对象</div><div class="line">    function createRequest() &#123;</div><div class="line">        var xhr;</div><div class="line">        if(window.XMLHttpRequest)&#123;</div><div class="line">            xhr = new window.XMLHttpRequest();</div><div class="line">        &#125; else &#123;</div><div class="line">            xhr = new window.ActiveXObject(&quot;XMLHTTP&quot;);</div><div class="line">        &#125;</div><div class="line">        return xhr;</div><div class="line">    &#125;</div><div class="line">//第二步：格式化数据</div><div class="line">    function formatData(data) &#123;</div><div class="line">        var k,</div><div class="line">            ret = [];</div><div class="line">        for(k in data) &#123;</div><div class="line">            ret.push(window.encodeURIComponent(k) + &apos;=&apos; +</div><div class="line">                window.encodeURIComponent(data[k]));</div><div class="line">        &#125;</div><div class="line">        //为了每次都从缓存中读取数据</div><div class="line">        ret.push((&apos;_=&apos; + Math.radom()).replace(&apos;.&apos;, &apos;&apos;));</div><div class="line">        return ret.join(&apos;&amp;&apos;);</div><div class="line">    &#125;</div><div class="line">//第三步：调用open方法，与服务器建立连接</div><div class="line">    var xhr = createRequest();</div><div class="line">    xhr.open(&apos;GET&apos;, &apos;data.json&apos;);</div><div class="line">//第四步：监听状态</div><div class="line">    xhr.onreadystatechange = function() &#123;</div><div class="line">        if(xhr.readyState === 4) &#123;</div><div class="line">            if(xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300 || xhr.statue === 304) &#123;</div><div class="line">                document.querySelector(&apos;#list&apos;).innerHTML = xhr.responseText;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">//第五步：发送请求</div><div class="line">    xhr.send();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!-- HTML结构 --&gt;</div><div class="line">    &lt;div id=&quot;list&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
 	</div>
 	<div class="meta split">
-		<time class="post-date" datetime="2015-06-13T22:00:00.000Z" itemprop="datePublished">2015-06-14</time>
+		<time class="post-date" datetime="2015-10-27T04:37:10.000Z" itemprop="datePublished">2015-10-27</time>
 	</div>
 </article>
 
 <!--评论-->
 
 	
-<div class="ds-thread" data-thread-key="第一篇博客" data-title="第一篇博客" data-url="http://yoursite.com/2015/06/14/第一篇博客/"></div>
+<div class="ds-thread" data-thread-key="关于Ajax请求的五步" data-title="关于Ajax请求的五步" data-url="http://yoursite.com/2015/10/27/关于Ajax请求的五步/"></div>
 <script type="text/javascript">
 
 var duoshuoQuery = {short_name:"yumemor"};
