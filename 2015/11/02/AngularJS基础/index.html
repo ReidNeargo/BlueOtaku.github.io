@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>AngularJS基础 | 有志者 事竟成  苦心人 天不负</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="有志者 事竟成  苦心人 天不负">
+	<img src="/favicon.png" alt="有志者 事竟成  苦心人 天不负"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="http://BlueOtaku@126.com/" target="_blank">Email</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      AngularJS基础
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h3 id="AngularJS基础"><a href="#AngularJS基础" class="headerlink" title="AngularJS基础"></a>AngularJS基础</h3><blockquote>
+<p>  AngularJS是一款由Google公司开发维护的前端MVC框架，其克服了HTML在构建应用上的诸多不足，从而降低了开发成本提升了开发效率。</p>
+</blockquote>
+<ol>
+<li><p>特点<br>AngularJS与我们之前学习的jQuery是有一定的区别的，jQuery更准确地说只是一个类库（类库是一系列函数的集合）以DOM做为驱动（核心），而AngularJS则是一个框架（诸多类库的集合）以数据和逻辑做为驱动（核心）。<br>AngularJS有着诸多特性，最为核心的是：模块化、双向数据绑定、语义标签、依赖注入等。<br>与之类似的框架还有BackBone、KnockkoutJS、Vue、React等。</p>
+</li>
+<li><p>MVC<br>MVC是一种开发模式，由模型（Model）、视图（View）、控制器（Controller）3部分构成，采用这种开发模式为合理组织代码提供了方便、降低了代码间的耦合度、功能结构清晰可见。</p>
+<ul>
+<li>模型：一般用来处理数据（读取/设置），一般指操作数据库。</li>
+<li>视图：一般用来展示数据，比如通过HTML展示</li>
+<li>控制器：一般用做连接模型和视图的桥梁</li>
+</ul>
+</li>
+<li><p>模块化</p>
+<ol>
+<li><p>定义应用<br>通过为任意HTML标签添加<code>ng-app</code>属性，可以指定一个应用，表示此标签所包裹的内容都属于应用的一部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;html lang=&quot;en&quot; ng-app=&quot;App&quot;&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>定义模块<br>AngularJS提供了一个全局对象angular,在此全局对象下存在若干的方法，其中`angular.module()``方法来定义一个模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var app = angular.module(&apos;app&apos;,[]);</div></pre></td></tr></table></figure>
+</li>
+<li><p>定义控制器<br>控制器作为连接模型和视图的桥梁存在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">app.controller(&apos;Student&apos;,[&apos;$scope&apos;,function($scope)&#123;</div><div class="line">    $scope = [</div><div class="line">        &#123;name:&apos;小麦&apos;,sex:&apos;男&apos;,age:18&#125;,</div><div class="line">        &#123;name:&apos;小雨&apos;,sex:&apos;女&apos;,age:18&#125;</div><div class="line">    ];</div><div class="line">    &#125;]);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>指令<br>HTML在构建应用时存在诸多不足之处，AngularJS通过扩展一系列的HTML属性或标签来弥补这些缺陷，所谓指令就是AngularJS自定义的HTML属性或标签，这些指令都是以<code>ng-</code>做为前缀的。</p>
+<ol>
+<li>内置指令<br> ng-app 指定应用根元素，至少有一个元素指定了此属性<br> ng-controller 指定控制器<br> ng-show 控制元素是否显示，true显示、false不显示<br> ng-hide 控制元素是否隐藏，true隐藏、false不隐藏<br> ng-if 控制元素是否“存在”，true存在、false不存在<br> ng-src 增强图片路径<br> ng-href 增强地址<br> ng-class 控制类名<br> ng-include 引入模板<br> ng-disabled 表单禁用<br> ng-readonly 表单只读<br> ng-checked 单/复选框表单选中<br> ng-selected 下拉框表单选中</li>
+<li>自定义指令<br> AngularJS允许根据实际业务需要自定义，通过angular全局对象下的directive方法实现 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var App = angular.module(&apos;App&apos;,[]);</div><div class="line">//自定义指令</div><div class="line">App.directive(&apos;tag&apos;,function()&#123;</div><div class="line">    return&#123;</div><div class="line">        //自定义指令的类型E、A、C、M</div><div class="line">        restrict: &apos;EA&apos;,</div><div class="line">        //是否替换原有标签</div><div class="line">        replace: true,</div><div class="line">        //指令模板</div><div class="line">        template: &apos;&lt;h1&gt;hello AngularJS&lt;/h1&gt;&apos;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2015-11-02T12:52:05.000Z" itemprop="datePublished">2015-11-02</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="AngularJS基础" data-title="AngularJS基础" data-url="http://yoursite.com/2015/11/02/AngularJS基础/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg' alt='Blue Otaku'>
+					<div class="media__body">
+						<h4>有志者 事竟成  苦心人 天不负</h4>
+						<p class='site-description'>null</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/blueotaku" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
