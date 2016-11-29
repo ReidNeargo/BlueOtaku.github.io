@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>archive_a: 2015/11 | 有志者 事竟成  苦心人 天不负</title>
+    <title>Git基本命令的汇总 | 有志者 事竟成  苦心人 天不负</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -69,41 +69,76 @@
 <!--文章列表-->
 <div class="wrapper">
   
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/11/18/Git基本命令的汇总/">Git基本命令的汇总</a></span>
-            <time class="post-time" datetime="2015-11-18T11:59:28.000Z" itemprop="datePublished">2015-11-18</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/11/02/AngularJS基础/">AngularJS基础</a></span>
-            <time class="post-time" datetime="2015-11-02T12:52:05.000Z" itemprop="datePublished">2015-11-02</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      Git基本命令的汇总
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h4 id="日常使用的Git命令汇总"><a href="#日常使用的Git命令汇总" class="headerlink" title="日常使用的Git命令汇总"></a>日常使用的Git命令汇总</h4><pre><code>- git config 配置本地仓库
+    + 第一次使用时需要配置git config --global user.name、git config --global user.email
+- git config --list 查看配置详情
+- git init 初始一个仓库，添加--bare 可以初始化一个共享仓库
+- git status 可以查看当前仓库的状态
+- git add &quot;文件&quot; 将工作区中的文件添加到暂存区中，其中一个file可以是一个单独的文件，也可以是一个目录、&quot;*&quot;、-A
+- git commit -m &quot;备注信息&quot; 将暂存区的文件，提交到本地仓库
+- git log 可以查看本地仓库的提交历史
+- git branch 查看分支
+- git branch &quot;分支名称&quot; 创建一个新的分支
+- git checkout &quot;分支名称&quot; 切换分支
+- git checkout -b developer 创建并切换到developer分支
+- git merge &quot;分支名称&quot; 合并分支
+- git branch -d &quot;分支名称&quot; 删除分支
+- git clone &quot;仓库地址&quot; 获取已有仓库的副本
+- git push origin &quot;本地分支名称：远程分支名称&quot;将本地分支推送至远程仓库
+- git push origin hotfix (通常的写法)相当于
+    1. git push origin hotfix: photofix
+    2. git push origin hotfix: newfeature
+    本地分支名称和远程仓库分支名称一样的情况下可以简写成一个，即git push &quot;仓库地址&quot; &quot;分支名称&quot;，如果远程仓库没有对应分支，将会制动创建
+- git remote add &quot;主机名称&quot; &quot;远程仓库地址&quot; 添加远程主机，即给元和才能主机起个别名。
+- git remote 可以查看已添加的远程主机
+- git remote show &quot;主机名称&quot; 可以查看远程主机的信息
+</code></pre>
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2015-11-18T11:59:28.000Z" itemprop="datePublished">2015-11-18</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="Git基本命令的汇总" data-title="Git基本命令的汇总" data-url="http://yoursite.com/2015/11/18/Git基本命令的汇总/"></div>
+<script type="text/javascript">
+
+var duoshuoQuery = {short_name:"yumemor"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
 
   
 </div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
 
 
 
