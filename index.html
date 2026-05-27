@@ -1,271 +1,503 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    
-    <title>有志者 事竟成  苦心人 天不负</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    
-      <link rel="icon" href="/favicon.png">
-    
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>马欢 - Web前端工程师简历</title>
+  <style>
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #2c3e50;
+      background: #f0f2f5;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #1a73e8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { list-style: none; }
 
-    <link rel="stylesheet" href="/css/style.css">
+    /* ===== Layout ===== */
+    .page {
+      max-width: 1000px;
+      margin: 32px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
 
-    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+    /* ===== Header / Hero ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a237e 0%, #283593 40%, #1565c0 100%);
+      color: #fff;
+      padding: 48px 48px 36px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -60px; top: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      right: 80px; bottom: -80px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .hero-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-name {
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+    }
+    .hero-title {
+      font-size: 18px;
+      font-weight: 400;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 13px;
+      backdrop-filter: blur(4px);
+    }
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+      text-align: right;
+    }
+    .hero-contact span { display: flex; align-items: center; gap: 6px; justify-content: flex-end; }
+    .hero-contact .icon { font-size: 15px; }
 
-  </head>
+    /* ===== Section ===== */
+    .section { padding: 32px 48px; }
+    .section + .section { border-top: 1px solid #e8ecf1; }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a237e;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 22px;
+      background: linear-gradient(180deg, #1a73e8, #1565c0);
+      border-radius: 2px;
+    }
 
-  <body>
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .skill-card {
+      background: #f8f9fc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      transition: box-shadow 0.2s;
+    }
+    .skill-card:hover { box-shadow: 0 2px 12px rgba(26,115,232,0.1); }
+    .skill-card-title {
+      font-weight: 600;
+      color: #1a237e;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+    .skill-card p {
+      font-size: 14px;
+      color: #4a5568;
+      line-height: 1.6;
+    }
 
-<header>
-	<a id="logo" href="/" title="有志者 事竟成  苦心人 天不负">
-	<img src="/favicon.png" alt="有志者 事竟成  苦心人 天不负"></a>
-	
-	
-		<!--搜索栏-->
-		<i class="js-toggle-search iconfont icon-search"></i>
+    /* ===== Timeline (Work Experience) ===== */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, #1a73e8, #c7d2fe);
+      border-radius: 1px;
+    }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -28px; top: 6px;
+      width: 16px; height: 16px;
+      background: #1a73e8;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #1a73e8;
+      z-index: 1;
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .timeline-company {
+      font-size: 17px;
+      font-weight: 700;
+      color: #1a237e;
+    }
+    .timeline-date {
+      font-size: 13px;
+      color: #718096;
+      background: #f0f4ff;
+      padding: 2px 10px;
+      border-radius: 12px;
+      white-space: nowrap;
+    }
+    .timeline-role {
+      font-size: 14px;
+      color: #1a73e8;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .timeline-project {
+      font-size: 15px;
+      font-weight: 600;
+      color: #2d3748;
+      margin: 14px 0 6px;
+      padding-left: 12px;
+      border-left: 3px solid #1a73e8;
+    }
+    .timeline-subtitle {
+      font-size: 13px;
+      color: #718096;
+      font-weight: 400;
+      margin-left: 6px;
+    }
+    .timeline-list { padding-left: 18px; }
+    .timeline-list li {
+      position: relative;
+      padding: 3px 0;
+      font-size: 14px;
+      color: #4a5568;
+      line-height: 1.65;
+    }
+    .timeline-list li::before {
+      content: '▸';
+      position: absolute;
+      left: -14px;
+      color: #1a73e8;
+      font-size: 12px;
+    }
+    .timeline-list strong { color: #2d3748; }
 
+    /* ===== Education ===== */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .edu-card {
+      background: #f8f9fc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 18px 22px;
+    }
+    .edu-school { font-weight: 700; font-size: 16px; color: #1a237e; }
+    .edu-major { font-size: 14px; color: #4a5568; margin: 4px 0; }
+    .edu-date { font-size: 13px; color: #718096; }
 
-<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
-	<div class="search-form__inner">
-		<div>
-			<i class="iconfont icon-search"></i>
-			<input class="text-input" placeholder="Enter Key..." type="search">
-		</div>
-	</div>
-</form>
-	
+    /* ===== Self Assessment ===== */
+    .assessment-text {
+      font-size: 14px;
+      color: #4a5568;
+      line-height: 1.8;
+      text-align: justify;
+      padding: 16px 20px;
+      background: #f8f9fc;
+      border-radius: 8px;
+      border-left: 3px solid #1a73e8;
+    }
 
-	
-		<!--侧边导航栏-->
-		<a id="nav-toggle" href="#"><span></span></a>
+    /* ===== Footer ===== */
+    .footer {
+      text-align: center;
+      padding: 20px 48px;
+      font-size: 13px;
+      color: #a0aec0;
+      border-top: 1px solid #e8ecf1;
+    }
 
-<nav>
-	<div class="menu-top-container">
-		<ul id="menu-top" class="menu">
-			
-				
-				<li class="current-menu-item">
-					<a href="http://BlueOtaku@126.com/" target="_blank">Email</a>
-				</li>
-			
-		</ul>
-	</div>
-</nav>
-	
+    /* ===== Print ===== */
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; border-radius: 0; box-shadow: none; }
+      .hero { background: #1a237e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .skill-card, .edu-card, .assessment-text { background: #f8f9fc !important; -webkit-print-color-adjust: exact; }
+    }
 
-</header>
-<div class="m-header ">
-	<section id="hero1" class="hero">
-		<div class="inner">
-		</div>
-	</section>
-	
-		<figure class="top-image" data-enable=true></figure>
-	
-</div>
-
-<!--文章列表-->
-<div class="wrapper">
-  
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .page { margin: 0; border-radius: 0; }
+      .hero { padding: 32px 20px 24px; }
+      .hero-name { font-size: 26px; }
+      .hero-title { font-size: 15px; }
+      .hero-contact { text-align: left; margin-top: 16px; }
+      .hero-contact span { justify-content: flex-start; }
+      .hero-top { flex-direction: column; }
+      .section { padding: 24px 20px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .timeline-header { flex-direction: column; gap: 4px; }
+      .footer { padding: 16px 20px; }
+    }
+    @media (max-width: 480px) {
+      .hero-name { font-size: 22px; }
+      .section-title { font-size: 17px; }
+      body { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- ===== Hero Header ===== -->
+    <header class="hero">
+      <div class="hero-top">
+        <div>
+          <div class="hero-name">马欢</div>
+          <div class="hero-title">Web 前端工程师 / 技术部组长</div>
+          <div class="hero-tags">
+            <span class="hero-tag">10年经验</span>
+            <span class="hero-tag">Vue 全栈</span>
+            <span class="hero-tag">小程序 / uni-app</span>
+            <span class="hero-tag">团队管理</span>
+            <span class="hero-tag">在职 · 1个月内到岗</span>
           </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/11/18/Git基本命令的汇总/">Git基本命令的汇总</a></span>
-            <time class="post-time" datetime="2015-11-18T11:59:28.000Z" itemprop="datePublished">2015-11-18</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/11/02/AngularJS基础/">AngularJS基础</a></span>
-            <time class="post-time" datetime="2015-11-02T12:52:05.000Z" itemprop="datePublished">2015-11-02</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/10/30/vi编辑器基础/">vi编辑器基础</a></span>
-            <time class="post-time" datetime="2015-10-30T12:21:24.000Z" itemprop="datePublished">2015-10-30</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/10/28/认识bash/">认识bash</a></span>
-            <time class="post-time" datetime="2015-10-28T11:59:12.000Z" itemprop="datePublished">2015-10-28</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/10/27/关于Ajax请求的五步/">关于Ajax请求的五步</a></span>
-            <time class="post-time" datetime="2015-10-27T04:37:10.000Z" itemprop="datePublished">2015-10-27</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/10/24/元素的各种居中方式/">元素的各种居中方式</a></span>
-            <time class="post-time" datetime="2015-10-24T12:14:51.000Z" itemprop="datePublished">2015-10-24</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/06/20/JavaScript基础/">JavaScript基础</a></span>
-            <time class="post-time" datetime="2015-06-20T06:05:30.000Z" itemprop="datePublished">2015-06-20</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/06/14/第一篇博客/">第一篇博客</a></span>
-            <time class="post-time" datetime="2015-06-13T22:00:00.000Z" itemprop="datePublished">2015-06-14</time>
-          </h2>
-        </li>
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-          <h2 class="no-background"  >
-            <span><a href="/2015/06/13/喜欢的诗歌/">喜欢的诗歌</a></span>
-            <time class="post-time" datetime="2015-06-13T15:18:59.000Z" itemprop="datePublished">2015-06-13</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
+        </div>
+        <div class="hero-contact">
+          <span><span class="icon">&#128222;</span> 18515475488</span>
+          <span><span class="icon">&#9993;</span> 18515475488@163.com</span>
+          <span><span class="icon">&#128205;</span> 北京 · 期望 23-28千/月</span>
+        </div>
+      </div>
+    </header>
 
-  
-</div>
+    <!-- ===== Skills ===== -->
+    <section class="section">
+      <h2 class="section-title">掌握技能</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-title">前端核心技术</div>
+          <p>精通 JavaScript、jQuery、Ajax、CSS3、HTML5 等基础技术，具备扎实的 DOM 操作与跨浏览器兼容处理能力</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">Vue 生态</div>
+          <p>熟练 Vue2/Vue3、Vue Router、Vuex，能独立搭建复杂单页/多页应用</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">小程序 / 跨端开发</div>
+          <p>掌握微信原生小程序、uni-app 开发，熟悉小程序生态及性能优化方案，支持多端适配</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">后端 &amp; 数据库</div>
+          <p>熟练 Node.js，可独立编写维护后台 API；掌握 MySQL、MongoDB 基础 CRUD 及表结构设计；了解 Apex 语言</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">工具 &amp; 部署</div>
+          <p>精通 Git/SVN、Webpack、Nginx 部署、PM2 进程管理，能独立完成项目构建与上线；了解 OpenCMS、Salesforce 平台</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-title">其他框架 &amp; 软技能</div>
+          <p>熟悉 Angular、React，能快速上手；具备技术团队管理、项目统筹、跨部门协作及新人培训能力</p>
+        </div>
+      </div>
+    </section>
 
+    <!-- ===== Work Experience ===== -->
+    <section class="section">
+      <h2 class="section-title">工作经历</h2>
+      <div class="timeline">
 
+        <!-- Job 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-company">北京中氢新逸科技有限公司</div>
+            <div class="timeline-date">2025.6 - 至今</div>
+          </div>
+          <div class="timeline-role">技术部组长 / 前端核心开发</div>
 
+          <div class="timeline-project">能付系列（能链油达小程序 + 能付管家）</div>
+          <ul class="timeline-list">
+            <li>全权主导项目从 0 到 1 搭建，负责需求评审、技术方案设计、系统架构规划及核心功能开发</li>
+            <li>采用微信原生技术栈开发核心小程序，基于 Vue3 + Element Plus 搭建后台管理系统</li>
+            <li>使用 AI 辅助完成后台权限体系、通用组件及页面结构设计，提升开发效率与代码规范化程度</li>
+            <li>基于 RBAC 模型实现后台动态权限管理，支持菜单、路由及按钮级权限控制</li>
+            <li>搭建统一请求封装、全局状态管理及前端异常处理机制，提升系统稳定性与可维护性</li>
+            <li>统筹开发任务拆分、工时评估与项目进度管理，协调前后端及业务团队高效协作</li>
+            <li><strong>工作成果：</strong>完成从技术选型、架构设计到功能落地的全流程推进，实现支付结算、订单管理、商户配置等核心业务闭环；搭建标准化前端开发规范与组件库，支撑产品快速迭代</li>
+          </ul>
+        </div>
 
+        <!-- Job 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-company">北京易油互联科技有限公司</div>
+            <div class="timeline-date">2022.8 - 2025.6</div>
+          </div>
+          <div class="timeline-role">技术部组长 / 前端核心开发</div>
 
-<div class="fat-footer">
-	<div class="wrapper">
-		<div class="layout layout--center">
-			<div class="layout__item palm-mb">
-				<div class="media">
-					<img class="headimg" src='http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg' alt='Blue Otaku'>
-					<div class="media__body">
-						<h4>有志者 事竟成  苦心人 天不负</h4>
-						<p class='site-description'>null</p>
-					</div>
-				</div>
-				<div class="author-contact">
-					<ul>
-						
-							
-							<li>
-				        		<a href="http://weibo.com/" target="_blank">
-				        			
-				        				<i class="iconfont icon-weibo"></i>
-				        			
-				        		</a>
-				        	</li>
-						
-							
-							<li>
-				        		<a href="https://github.com/blueotaku" target="_blank">
-				        			
-				        				<i class="iconfont icon-github"></i>
-				        			
-				        		</a>
-				        	</li>
-						
-							
-							<li>
-				        		<a href="https://www.zhihu.com/people/" target="_blank">
-				        			
-										<i class="iconfont icon-zhihu"></i>
-				        			
-				        		</a>
-				        	</li>
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+          <div class="timeline-project">吉牛系列（掌上吉牛小程序 + 吉牛管家 + 吉牛管理平台）</div>
+          <ul class="timeline-list">
+            <li>采用微信原生技术栈开发 3 款产品核心模块，封装请求拦截、状态管理等通用工具类</li>
+            <li>主导技术栈迁移，基于 uni-app 设计跨端架构，统一组件库与 API 请求规范</li>
+            <li>搭建管理平台权限管理体系，基于 RBAC 模型实现动态路由、菜单及按钮级权限控制</li>
+            <li>使用 AI 辅助完成权限架构设计、权限树方案优化及通用代码生成，提升开发效率</li>
+            <li><strong>工作成果：</strong>封装 20+ 可复用业务组件，代码复用率提升 75%；通过 uni-app 条件编译减少 60% 重复开发；优化 socket 长连接心跳机制，消息送达率达 99.9%；首屏加载速度从 3.2s 优化至 1.5s</li>
+          </ul>
 
-<footer class="footer" role="contentinfo">
-	<div class="wrapper wrapper--wide split split--responsive">
-		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
-	</div>
-</footer>
+          <div class="timeline-project">青易 OA 系列（青易 OA 小程序 + 青易 OA 管理后台）</div>
+          <ul class="timeline-list">
+            <li>基于 uni-app 重构，适配小程序 / 安卓 APP / iOS APP 三端</li>
+            <li>采用 Vue + Element UI 搭建管理后台，封装表单校验、表格渲染等通用组件</li>
+            <li><strong>工作成果：</strong>通过 uni-app 原生渲染模式提升 APP 端性能，页面响应延迟降低 50%；封装 15+ 自定义表单组件，支持动态配置；三端接口请求统一封装，异常捕获率达 100%；兼容 iOS 12+、Android 8.0+ 及主流微信版本，兼容性覆盖率 98%</li>
+          </ul>
+        </div>
 
-	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
-	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
-	<script src="/js/lib.js"></script>
-	<script src="/js/google-code-prettify/prettify.js"></script>
-	<script src="/js/module.js"></script>
-	<script src="/js/script.js"></script>
-	<script type='text/javascript'>
-		//代码高亮
-		$(document).ready(function(){
-	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
-   			prettyPrint();
-		});
-	</script>
-	</body>
+        <!-- Job 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-company">北京拓普世纪信息咨询有限公司</div>
+            <div class="timeline-date">2020.6 - 2022.8</div>
+          </div>
+          <div class="timeline-role">前端开发</div>
+
+          <div class="timeline-project">TOP数据</div>
+          <ul class="timeline-list">
+            <li>负责 PC 端项目重构与微信小程序开发，搭建多页面项目架构</li>
+            <li>使用 Vue + Element UI 技术栈重构现有 PC 项目，优化用户交互体验</li>
+            <li>基于 uni-app 开发多个业务小程序，实现跨端兼容</li>
+            <li><strong>工作成果：</strong>重构 8 个核心 PC 项目，页面响应速度提升 40%，用户操作效率提升 25%；开发 3 个微信小程序，累计用户量超 1 万；新功能开发周期缩短 15%</li>
+          </ul>
+
+          <div class="timeline-project">电影频道投票小程序及管理后台</div>
+          <ul class="timeline-list">
+            <li>负责 2020-2021 年电影频道影片评选活动的全流程开发与测试上线</li>
+            <li>独立开发投票小程序前端功能与管理后台，支持投票统计、数据导出等需求</li>
+            <li><strong>工作成果：</strong>微信原生开发投票小程序，支持 10 万+ 用户参与投票，系统无卡顿崩溃；管理后台实现投票数据实时监控、候选人管理等功能，高效支撑 2 届评选活动</li>
+          </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-company">众惠联科技（北京）有限公司</div>
+            <div class="timeline-date">2018.9 - 2020.4</div>
+          </div>
+          <div class="timeline-role">Web 前端开发工程师</div>
+
+          <div class="timeline-project">众惠互助</div>
+          <ul class="timeline-list">
+            <li>独立负责活动项目开发及主线项目协作，设计 MySQL 数据库表结构</li>
+            <li>使用 Vue + Vue Router 开发微信公众号 SPA 应用，基于 Node.js 编写后台 API 接口</li>
+            <li>搭建 Vue + Webpack 多页面应用架构，优化项目部署流程</li>
+            <li><strong>工作成果：</strong>开发 5 个活动类 SPA 应用，累计参与用户超 5 万，活动转化率提升 10%；设计合理的数据库表结构，数据查询效率提升 30%；通过 Nginx + PM2 实现项目自动化部署，部署效率提升 60%</li>
+          </ul>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <div class="timeline-company">博彦多彩数据科技有限公司</div>
+            <div class="timeline-date">2016.7 - 2018.9</div>
+          </div>
+          <div class="timeline-role">Web 前端开发工程师</div>
+
+          <div class="timeline-project">企业主数据系统</div>
+          <ul class="timeline-list">
+            <li>独立完成项目二次开发与页面重构，评估 OpenCMS 框架适配性</li>
+            <li>使用 Bootstrap 重构页面，完成 10+ 功能模块迭代</li>
+          </ul>
+
+          <div class="timeline-project">中细软集团 CRM 系统</div>
+          <ul class="timeline-list">
+            <li>使用 Apex + Angular 完成 CRM 系统核心模块开发，支持 200+ 员工日常使用</li>
+            <li>编写 Apex 语言学习文档，培训 3 批新员工，缩短适应周期 1 个月</li>
+          </ul>
+
+          <div class="timeline-project">弘安在线</div>
+          <ul class="timeline-list">
+            <li>独立完成 PC 官网与微信公众号的前端开发，精准还原 20+ 页面设计</li>
+            <li>页面加载速度均控制在 2 秒内，跨浏览器兼容性良好</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section class="section">
+      <h2 class="section-title">教育背景</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-school">天津大学</div>
+          <div class="edu-major">计算机科学与技术</div>
+          <div class="edu-date">2022.3 - 2025.7</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-school">山西电力职业技术学院</div>
+          <div class="edu-major">计算机信息管理</div>
+          <div class="edu-date">2014.10 - 2017.7</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Self Assessment ===== -->
+    <section class="section">
+      <h2 class="section-title">自我评价</h2>
+      <div class="assessment-text">
+        9 年 web 前端开发经验，从一线开发逐步晋升为技术部组长，兼具扎实的技术功底与团队管理能力，熟悉前端全流程开发与项目统筹。精通 Vue 生态、小程序开发等核心技术，了解后端与数据库基础，能独立解决复杂技术问题，主导项目架构优化与性能提升。具备良好的跨部门沟通协作能力、逻辑分析能力与问题解决能力，注重团队建设与新人培养，推动团队高效协作。吃苦耐劳，热爱前端技术，始终保持学习热情，关注行业新技术与趋势，期望在技术管理领域持续深耕，为公司创造更大价值。
+      </div>
+    </section>
+
+    <footer class="footer">
+      马欢 · Web 前端工程师 · 18515475488 · 18515475488@163.com
+    </footer>
+  </div>
+</body>
 </html>
